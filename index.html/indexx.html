@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Práctico JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Práctico de JavaScript</h1>
+
+    <select id="ejercicio">
+        <option value="">Seleccione un ejercicio</option>
+        <option value="ejercicio1.js">Ejercicio 1</option>
+        <option value="ejercicio2.js">Ejercicio 2</option>
+        <option value="ejercicio3.js">Ejercicio 3</option>
+        <option value="ejercicio4.js">Ejercicio 4</option>
+        <option value="ejercicio5.js">Ejercicio 5</option>
+        <option value="ejercicio6.js">Ejercicio 6</option>
+        <option value="ejercicio7.js">Ejercicio 7</option>
+        <option value="ejercicio8.js">Ejercicio 8</option>
+        <option value="ejercicio9.js">Ejercicio 9</option>
+        <option value="ejercicio10.js">Ejercicio 10</option>
+    </select>
+
+    <button onclick="ejecutarEjercicio()">Ejecutar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function ejecutarEjercicio() {
+
+            let ejercicio = document.getElementById("ejercicio").value;
+
+            if (ejercicio === "") {
+                document.getElementById("resultado").innerHTML =
+                    "<p>Seleccione un ejercicio.</p>";
+                return;
+            }
+
+            document.getElementById("resultado").innerHTML =
+                "<p>Ejecutando " + ejercicio + "...</p>";
+
+            let script = document.createElement("script");
+            script.src = ejercicio;
+
+            document.body.appendChild(script);
+        }
+    </script>
+
+</body>
+</html>
+```
